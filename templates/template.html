@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>This is start of my child template content</h3>
+    <br>
+        <p>This is a value from the list: {{my_list[3]}}</p>
+        <p>This is a loop through the list </p>
+        <ul>
+            {% for n in my_list %}
+                   <li> {{n}}</li>
+            {% endfor %}
+        </ul>
+
+    <p>Hello {{name}} !</p>
+
+    <h3>This is end of my child template content</h3>
+    {% block footer %}
+        <p>This is a footer derived from parent class to child class</p>
+        {{ super() }}
+    {% endblock %}
+
+{% endblock %}
